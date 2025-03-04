@@ -20,7 +20,7 @@ class Herbivore extends Animal {
   }
 
   hide() {
-    this.hidden = !this.hidden;
+    this.hidden = true;
   }
 }
 
@@ -31,7 +31,7 @@ class Carnivore extends Animal {
 
   bite(target) {
     Animal.alive.findIndex((creature, i) => {
-      if (target.id === creature.id && creature.hidden === false) {
+      if (target.id === creature.id && target.hidden === false) {
         Animal.alive[i].health -= 50;
 
         if (Animal.alive[i].health <= 0) {
